@@ -26,7 +26,6 @@ public class MainController {
 
     @GetMapping(value="/getUserProfileDetails/{'userID'}")
     public Optional<UserProfile> getUserProfileDetails  (@PathVariable("userId") String userId){
-        //businessProfileService.findById("adhasjbdj");
         return userProfileService.findById(userId);
     }
 
@@ -43,7 +42,7 @@ public class MainController {
     public BusinessProfile addBusinessProfile(@RequestBody BusinessProfile businessProfile){
         return businessProfileService.save(businessProfile);
     }
-    @GetMapping(value="/getProfileFollowerDetails/{'id'}")
+    @GetMapping(value="/getProfileFollowerDetails/{id}")
     public Optional<ProfileFollower> getProfileFollowerDetails  (@PathVariable("id") String id){
         return profileFollowerService.findById(id);
     }
@@ -51,8 +50,19 @@ public class MainController {
     public ProfileFollower addProfileFollower(@RequestBody ProfileFollower profileFollower){
         return profileFollowerService.save(profileFollower);
     }
-
-
+    @GetMapping(value="/getFollowersCount/{followerId}")
+    public Integer getFollowers1Count(@PathVariable("followerId") String followerId){
+        int followersCount = profileFollowerService.getFollowersCount(followerId);
+        return followersCount;
     }
+    @GetMapping(value="/getFollowingCount/{userId}")
+    public Integer getFollowingCount(@PathVariable("userId") String userId)
+    {
+        int followingCount=profileFollowerService.getFollowingCount(userId);
+        return followingCount;
+    }
+
+
+}
 
 

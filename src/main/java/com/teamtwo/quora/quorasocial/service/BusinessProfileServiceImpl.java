@@ -1,7 +1,6 @@
 package com.teamtwo.quora.quorasocial.service;
 
 import com.teamtwo.quora.quorasocial.entity.BusinessProfile;
-import com.teamtwo.quora.quorasocial.entity.UserProfile;
 import com.teamtwo.quora.quorasocial.repository.BusinessProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
