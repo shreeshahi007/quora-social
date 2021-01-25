@@ -15,3 +15,4 @@ public class ProfileFollower {
     private boolean isModerator;
     private boolean isApproved;
 }
+

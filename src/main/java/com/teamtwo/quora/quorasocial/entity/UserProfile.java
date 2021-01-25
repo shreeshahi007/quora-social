@@ -17,8 +17,6 @@ public class UserProfile {
     private String profilePicUrl;
     private List<String> userCategory;
     private String userDescription;
-    private List<String> userFollowers;
-    private List<String> userFollowing;
     private int userScore;
     private int mode;//0-public 1-private
 
